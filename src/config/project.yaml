@@ -1,4 +1,4 @@
-dateModified: 1592217699
+dateModified: 1595070705
 email:
   fromEmail: fake@fake-email-address.com
   fromName: 'Servd Demo'
@@ -6,6 +6,64 @@ email:
 fieldGroups:
   41f0085a-91c4-4de0-8a54-a5d6419bb7a8:
     name: Common
+fields:
+  361673db-a61c-40b8-91b2-255452e0d25d:
+    contentColumnType: string
+    fieldGroup: 41f0085a-91c4-4de0-8a54-a5d6419bb7a8
+    handle: pageTheme
+    instructions: 'Please select a page theme'
+    name: 'Page Theme'
+    searchable: true
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - Default
+            -
+              - value
+              - default
+            -
+              - default
+              - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - Blue
+            -
+              - value
+              - blue
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Teal
+            -
+              - value
+              - teal
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Yellow
+            -
+              - value
+              - yellow
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
 plugins:
   redactor:
     edition: standard
@@ -15,6 +73,8 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: '1.0'
+    settings:
+      injectCors: ''
 sections:
   7b9fa0a4-623a-43e2-83a8-3d013cc6902e:
     enableVersioning: false
@@ -40,12 +100,42 @@ sections:
         template: singles/home
         uriFormat: __home__
     type: single
+  871f777c-77cf-435d-9884-fade2122c036:
+    enableVersioning: true
+    entryTypes:
+      af2980e4-d516-4f4d-af48-32375e3c07c5:
+        fieldLayouts:
+          9edaf1d5-d93e-45f4-8eae-dc70fe2724e6:
+            tabs:
+              -
+                fields:
+                  361673db-a61c-40b8-91b2-255452e0d25d:
+                    required: false
+                    sortOrder: 1
+                name: Config
+                sortOrder: 1
+        handle: contact
+        hasTitleField: false
+        name: Contact
+        sortOrder: 1
+        titleFormat: '{section.name|raw}'
+        titleLabel: ''
+    handle: contact
+    name: Contact
+    propagationMethod: all
+    siteSettings:
+      4a08a421-ed5e-4eb5-8dbc-018aed34c7d3:
+        enabledByDefault: true
+        hasUrls: true
+        template: singles/contact
+        uriFormat: contact
+    type: single
 siteGroups:
   30f1acc4-b407-4444-8edc-278ba32bf7c9:
     name: 'Servd Demo'
 sites:
   4a08a421-ed5e-4eb5-8dbc-018aed34c7d3:
-    baseUrl: 'http://localhost'
+    baseUrl: 'http://localhost:3000'
     handle: default
     hasUrls: true
     language: en
@@ -57,13 +147,15 @@ system:
   edition: solo
   live: true
   name: 'Servd Demo'
-  schemaVersion: 3.4.10
+  schemaVersion: 3.4.11
   timeZone: America/Los_Angeles
 users:
   allowPublicRegistration: false
   defaultGroup: null
-  photoSubpath: ''
-  photoVolumeUid: null
+  fieldLayouts:
+    2332c603-5f3a-4fa3-8854-18c193326905: null
+  photoSubpath: 'users/{username}'
+  photoVolumeUid: 2f7839c9-4c87-4bf6-9d3c-2181918ec980
   requireEmailVerification: true
 volumes:
   2f7839c9-4c87-4bf6-9d3c-2181918ec980:
@@ -71,7 +163,7 @@ volumes:
     hasUrls: true
     name: 'Servd Assets'
     settings:
-      makeUploadsPublic: '1'
+      makeUploadsPublic: true
       projectSlug: ''
       securityKey: ''
       subfolder: ''
