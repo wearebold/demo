@@ -1,4 +1,4 @@
-dateModified: 1595075861
+dateModified: 1595087969
 email:
   fromEmail: fake@fake-email-address.com
   fromName: 'Servd Demo'
@@ -337,7 +337,7 @@ siteGroups:
     name: 'Servd Demo'
 sites:
   4a08a421-ed5e-4eb5-8dbc-018aed34c7d3:
-    baseUrl: 'http://localhost:3000'
+    baseUrl: '@web'
     handle: default
     hasUrls: true
     language: en
