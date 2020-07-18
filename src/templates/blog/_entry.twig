@@ -1,0 +1,39 @@
+{% extends '_layout' %}
+
+{% block content %}
+  
+  <div class="hero hero-bluebg pt-32 md:pt-40 pb-32 md:pb-48">
+      <div class="center-content">
+          <div class="max-w-xl m-auto text-white text-center px-4">
+              <h2 class="text-4xl sm:text-5xl md:text-5xl leading-tight mb-6 md:mb-10 font-heading">Blog <span style="color: {{ entry.pageTheme.value }};">Servd Demo</span></h2>
+              <p class="text-lg md:text-2xl mb-8 md:mb-12 font-light leading-tight">Absolutely Fantastic!</p>
+          </div>
+      </div>
+  </div>
+
+  {% for block in entry.blogContentBuilder.all() %}
+  {% if block.type == "lead" %}        
+    <div class="pt-12 text-blue-dark">
+        <div class="center-content center-content-slim">            
+          {{ block.leadContent|markdown }}            
+        </div>
+    </div>         
+  {% elseif block.type == "bodyContent" %}
+    <div class="pt-6 text-blue-dark">
+        <div class="center-content center-content-slim">            
+          {{ block.bodyContent|markdown }}            
+        </div>
+    </div>          
+  {% elseif block.type == "blockquote" %}
+   <div class="py-12 text-blue-dark">
+        <div class="center-content center-content-slim"> 
+      <blockquote>
+          <p>{{ block.quote }}</p>
+          <cite>– {{ block.cite }}</cite>
+      </blockquote>
+        </div>
+    </div>       
+  {% endif %}
+{% endfor %}
+
+{% endblock %}

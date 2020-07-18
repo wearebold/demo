@@ -1,4 +1,4 @@
-dateModified: 1595070705
+dateModified: 1595075861
 email:
   fromEmail: fake@fake-email-address.com
   fromName: 'Servd Demo'
@@ -6,6 +6,8 @@ email:
 fieldGroups:
   41f0085a-91c4-4de0-8a54-a5d6419bb7a8:
     name: Common
+  f2cdff22-22be-4f41-8009-6d475c0adedb:
+    name: Blog
 fields:
   361673db-a61c-40b8-91b2-255452e0d25d:
     contentColumnType: string
@@ -64,6 +66,176 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\Dropdown
+  d1453677-e4eb-477b-8c3e-5172126a5af4:
+    contentColumnType: string
+    fieldGroup: f2cdff22-22be-4f41-8009-6d475c0adedb
+    handle: blogContentBuilder
+    instructions: ''
+    name: 'Blog Con­tent Builder'
+    searchable: true
+    settings:
+      contentTable: '{{%matrixcontent_blogcontentbuilder}}'
+      maxBlocks: ''
+      minBlocks: ''
+      propagationMethod: all
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Matrix
+matrixBlockTypes:
+  3bccebf1-9425-46f4-ab35-cf3cd8f0192a:
+    field: d1453677-e4eb-477b-8c3e-5172126a5af4
+    fieldLayouts:
+      8dad8f18-f497-40d3-b965-462cb9a0bec4:
+        tabs:
+          -
+            fields:
+              bbd7833c-bd16-41f0-ac60-55d12d15f92d:
+                required: false
+                sortOrder: 3
+              ce3b536f-036f-412f-98fb-51b54619c9a8:
+                required: false
+                sortOrder: 1
+              cfc595e9-0629-4749-9db8-0d459538daa6:
+                required: false
+                sortOrder: 2
+            name: Content
+            sortOrder: 1
+    fields:
+      bbd7833c-bd16-41f0-ac60-55d12d15f92d:
+        contentColumnType: text
+        fieldGroup: null
+        handle: jobTitle
+        instructions: ''
+        name: 'Job Title'
+        searchable: true
+        settings:
+          byteLimit: null
+          charLimit: null
+          code: ''
+          columnType: null
+          initialRows: '4'
+          multiline: ''
+          placeholder: ''
+        translationKeyFormat: null
+        translationMethod: none
+        type: craft\fields\PlainText
+      ce3b536f-036f-412f-98fb-51b54619c9a8:
+        contentColumnType: string(1020)
+        fieldGroup: null
+        handle: quote
+        instructions: ''
+        name: Quote
+        searchable: true
+        settings:
+          byteLimit: null
+          charLimit: 255
+          code: '1'
+          columnType: null
+          initialRows: '5'
+          multiline: '1'
+          placeholder: ''
+        translationKeyFormat: null
+        translationMethod: none
+        type: craft\fields\PlainText
+      cfc595e9-0629-4749-9db8-0d459538daa6:
+        contentColumnType: text
+        fieldGroup: null
+        handle: cite
+        instructions: ''
+        name: 'Full Name'
+        searchable: true
+        settings:
+          byteLimit: null
+          charLimit: null
+          code: ''
+          columnType: null
+          initialRows: '4'
+          multiline: ''
+          placeholder: ''
+        translationKeyFormat: null
+        translationMethod: none
+        type: craft\fields\PlainText
+    handle: blockquote
+    name: Quote
+    sortOrder: 3
+  3ff3cb95-2f5e-4c98-bead-da2b83cd3088:
+    field: d1453677-e4eb-477b-8c3e-5172126a5af4
+    fieldLayouts:
+      9df99d6c-ad36-4e33-934d-6ef20f48ed09:
+        tabs:
+          -
+            fields:
+              26f7c7b1-88d5-4576-989c-5a38f26bd2cf:
+                required: false
+                sortOrder: 1
+            name: Content
+            sortOrder: 1
+    fields:
+      26f7c7b1-88d5-4576-989c-5a38f26bd2cf:
+        contentColumnType: text
+        fieldGroup: null
+        handle: bodyContent
+        instructions: ''
+        name: Content
+        searchable: true
+        settings:
+          availableTransforms: '*'
+          availableVolumes: ''
+          cleanupHtml: true
+          columnType: text
+          purifierConfig: ''
+          purifyHtml: '1'
+          redactorConfig: Simple.json
+          removeEmptyTags: '1'
+          removeInlineStyles: '1'
+          removeNbsp: '1'
+          showUnpermittedFiles: false
+          showUnpermittedVolumes: false
+        translationKeyFormat: null
+        translationMethod: none
+        type: craft\redactor\Field
+    handle: bodyContent
+    name: Content
+    sortOrder: 2
+  c6068dd7-e19a-4a1b-9e15-d791e5cd3b3c:
+    field: d1453677-e4eb-477b-8c3e-5172126a5af4
+    fieldLayouts:
+      e267a954-0b60-4903-b255-70295bea30ed:
+        tabs:
+          -
+            fields:
+              64f774e0-17d1-43ac-a711-1c88e1ea01ca:
+                required: false
+                sortOrder: 1
+            name: Content
+            sortOrder: 1
+    fields:
+      64f774e0-17d1-43ac-a711-1c88e1ea01ca:
+        contentColumnType: text
+        fieldGroup: null
+        handle: leadContent
+        instructions: ''
+        name: 'Lead Content '
+        searchable: true
+        settings:
+          availableTransforms: '*'
+          availableVolumes: ''
+          cleanupHtml: true
+          columnType: text
+          purifierConfig: ''
+          purifyHtml: '1'
+          redactorConfig: Simple.json
+          removeEmptyTags: '1'
+          removeInlineStyles: '1'
+          removeNbsp: '1'
+          showUnpermittedFiles: false
+          showUnpermittedVolumes: false
+        translationKeyFormat: null
+        translationMethod: none
+        type: craft\redactor\Field
+    handle: lead
+    name: Lead
+    sortOrder: 1
 plugins:
   redactor:
     edition: standard
@@ -76,6 +248,36 @@ plugins:
     settings:
       injectCors: ''
 sections:
+  3c506941-b0f2-4acb-aea6-3febf940751c:
+    enableVersioning: true
+    entryTypes:
+      2418f505-2394-41d7-b026-c3aaa42d3f9e:
+        fieldLayouts:
+          ccd86573-e9fa-4a27-8ad8-6c2e23a10838:
+            tabs:
+              -
+                fields:
+                  d1453677-e4eb-477b-8c3e-5172126a5af4:
+                    required: false
+                    sortOrder: 1
+                name: 'Post Content'
+                sortOrder: 1
+        handle: blog
+        hasTitleField: true
+        name: Blog
+        sortOrder: 1
+        titleFormat: ''
+        titleLabel: Title
+    handle: blog
+    name: Blog
+    propagationMethod: all
+    siteSettings:
+      4a08a421-ed5e-4eb5-8dbc-018aed34c7d3:
+        enabledByDefault: true
+        hasUrls: true
+        template: blog/_entry
+        uriFormat: 'blog/{slug}'
+    type: channel
   7b9fa0a4-623a-43e2-83a8-3d013cc6902e:
     enableVersioning: false
     entryTypes:
